@@ -4,6 +4,7 @@ Port of [OpenBoard](https://openboard.ch/) for FreeBSD.
 
 ## Status
 Work in progress — submitted to FreeBSD ports tree.
+
 Tested on FreeBSD 15.0-CURRENT amd64.
 
 ## Patches included
