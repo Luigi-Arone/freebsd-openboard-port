@@ -1,0 +1,5 @@
+work/
+*.orig
+*.rej
+*.bak
+distinfo
