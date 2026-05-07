@@ -13,6 +13,7 @@ Tested on FreeBSD 15.0-CURRENT amd64.
 - X11 linker fix: The upstream DependencyX11.cmake did not correctly resolve libX11 on FreeBSD. Replaced pkgconfig-based detection with direct find_library() call.
 - QMap initialization fix: Brace-initialized QMap with string literals failed to compile under Clang/C++20 on FreeBSD. Rewrote using lambda initializer pattern.
 - FreeBSD ifdef: UBEmbedController.cpp had Linux-only ifdefs that excluded FreeBSD. Added Q_OS_FREEBSD alongside Q_OS_LINUX.
+- Podcast/recording support: UBPodcastController.cpp had Linux-only ifdefs for FFmpeg encoder initialization and microphone device enumeration, causing the podcast feature to be unavailable on FreeBSD; Added Q_OS_FREEBSD alongside Q_OS_LINUX in all three affected ifdefs.
 
 ## Testing
 ```
