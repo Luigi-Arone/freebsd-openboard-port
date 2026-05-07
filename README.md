@@ -13,5 +13,9 @@ Work in progress — submitted to FreeBSD ports tree.
 - QMap initialization fix
 
 ## Testing
+```
 cd /usr/ports/misc/openboard
+```
+```
 make install
+```
