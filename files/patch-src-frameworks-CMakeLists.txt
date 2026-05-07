@@ -1,0 +1,12 @@
+--- src/frameworks/CMakeLists.txt.orig	2026-05-07 04:53:02.493145000 -0300
++++ src/frameworks/CMakeLists.txt	2026-05-07 04:53:19.274502000 -0300
+@@ -28,3 +28,9 @@
+         UBPlatformUtils_freebsd.cpp
+     )
+ endif()
++
++if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
++    target_sources(openboard PRIVATE
++        UBPlatformUtils_freebsd.cpp
++    )
++endif()

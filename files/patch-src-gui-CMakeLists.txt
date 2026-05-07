@@ -1,0 +1,12 @@
+--- src/gui/CMakeLists.txt.orig	2026-05-07 04:53:28.236425000 -0300
++++ src/gui/CMakeLists.txt	2026-05-07 04:53:32.073164000 -0300
+@@ -98,3 +98,9 @@
+         UBKeyboardPalette_freebsd.cpp
+     )
+ endif()
++
++if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
++    target_sources(openboard PRIVATE
++        UBKeyboardPalette_freebsd.cpp
++    )
++endif()
