@@ -1,7 +1,7 @@
---- src/gui/CMakeLists.txt.orig	2026-05-07 04:53:28.236425000 -0300
-+++ src/gui/CMakeLists.txt	2026-05-07 04:53:32.073164000 -0300
-@@ -98,3 +98,9 @@
-         UBKeyboardPalette_freebsd.cpp
+--- src/gui/CMakeLists.txt.orig	2026-03-23 11:30:46 UTC
++++ src/gui/CMakeLists.txt
+@@ -100,3 +100,9 @@ endif()
+         UBKeyboardPalette_linux.cpp
      )
  endif()
 +

@@ -1,6 +1,6 @@
---- src/web/UBEmbedController.cpp.orig	2026-05-07 05:37:05.570855000 -0300
-+++ src/web/UBEmbedController.cpp	2026-05-07 05:37:15.620478000 -0300
-@@ -150,7 +150,7 @@
+--- src/web/UBEmbedController.cpp.orig	2026-03-23 11:30:46 UTC
++++ src/web/UBEmbedController.cpp
+@@ -150,7 +150,7 @@ void UBEmbedController::textChanged(const QString& new
      static const QRegularExpression regExp("[<>:\"/\\\\|?*]");
  #endif
  

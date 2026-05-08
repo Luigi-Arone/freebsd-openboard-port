@@ -1,5 +1,5 @@
---- cmake/DependencyX11.cmake.orig	2026-05-07 04:48:08.519620000 -0300
-+++ cmake/DependencyX11.cmake	2026-05-07 04:50:16.623841000 -0300
+--- cmake/DependencyX11.cmake.orig	2026-03-23 11:30:46 UTC
++++ cmake/DependencyX11.cmake
 @@ -1,18 +1,8 @@
 -# Find FFmpeg
 +# Find X11

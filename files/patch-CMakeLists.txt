@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-05-07 05:39:36.031024000 -0300
-+++ CMakeLists.txt	2026-05-07 05:39:46.326770000 -0300
-@@ -80,7 +80,7 @@
+--- CMakeLists.txt.orig	2026-03-23 11:30:46 UTC
++++ CMakeLists.txt
+@@ -80,7 +80,7 @@ set(OPENBOARD_MIMEICON_FILE resources/linux/ch.openboa
  # Basic compiler settings
  # ==========================================================================
  
