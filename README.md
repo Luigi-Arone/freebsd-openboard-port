@@ -39,5 +39,6 @@ Tested on FreeBSD 15.0-CURRENT amd64 with Qt6.
 
 ## Acknowledgments
 
-Thanks to the FreeBSD committer who reviewed and refactored the initial
-submission, providing a much cleaner port structure.
+Thanks to Vladimir Druzenko, the FreeBSD committer who reviewed and
+refactored the initial submission, providing a much cleaner port
+structure.
