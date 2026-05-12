@@ -3,7 +3,7 @@
 @@ -1,18 +1,8 @@
 -# Find FFmpeg
 +# Find X11
-+find_library(X11_LIB X11 PATHS /usr/local/lib /usr/lib)
++find_library(X11_LIB X11 PATHS %%LOCALBASE%%)
  
 -find_package(X11 QUIET)
 -

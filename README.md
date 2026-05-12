@@ -8,33 +8,25 @@ PDF import, web browsing, video playback, and screen annotations.
 
 ## Status
 
-Work in progress — submitted to FreeBSD ports tree (Bug 295104).
+Submitted to FreeBSD ports tree ([Bug 295104](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=295104)).
+The current version in this repository reflects the refactored port
+provided by the FreeBSD committer during review.
 
 ## Patches included
 
-- C++20 compatibility: Poppler headers use C++20 features (std::span,
-  std::string::starts_with, requires keyword). The upstream CMakeLists.txt
-  defaulted to C++17.
-- FFmpeg 6.x API updates: avcodec_close() was removed in FFmpeg 6.x,
-  replaced by avcodec_free_context().
-- FreeBSD platform support (UBPlatformUtils, UBKeyboardPalette): Added
-  UBPlatformUtils_freebsd.cpp and UBKeyboardPalette_freebsd.cpp based on
-  the Linux equivalents, as the upstream only provided platform specific
-  implementations for Linux, macOS and Windows.
-- X11 linker fix: The upstream DependencyX11.cmake did not correctly
-  resolve libX11 on FreeBSD. Replaced pkgconfig-based detection with
-  direct find_library() call.
-- QMap initialization fix: Brace-initialized QMap with string literals
-  failed to compile under Clang/C++20 on FreeBSD. Rewrote using lambda
-  initializer pattern.
-- FreeBSD ifdef: UBEmbedController.cpp had Linux-only ifdefs that excluded
-  FreeBSD. Added Q_OS_FREEBSD alongside Q_OS_LINUX.
-- Podcast/recording support: UBPodcastController.cpp had Linux-only ifdefs
-  for FFmpeg encoder initialization and microphone device enumeration.
-  Added Q_OS_FREEBSD alongside Q_OS_LINUX in all three affected ifdefs.
-- Qt6 QChar conversion: In Qt6, QChar no longer has implicit conversion
-  from int. Added explicit QChar() casts in keyboard layout macros.
-
+- **C++20 standard**: Poppler headers require C++20 features (std::span,
+  std::string::starts_with, requires keyword). Upstream defaults to C++17.
+- **X11 detection**: Replaced pkgconfig-based detection with direct
+  find_library() using LOCALBASE.
+- **FreeBSD platform support**: Patched UBPlatformUtils_linux.cpp and
+  CMakeLists.txt files in src/frameworks and src/gui to compile the
+  Linux platform code on FreeBSD as well (CMAKE_SYSTEM_NAME matches
+  "FreeBSD|Linux"), with FreeBSD-specific ifdefs where needed (DBus
+  onboard integration is disabled on FreeBSD).
+- **FreeBSD ifdefs**: Added Q_OS_FREEBSD alongside Q_OS_LINUX in
+  UBEmbedController.cpp and UBPodcastController.cpp.
+- **Poppler 26.4+ compatibility**: Updated XPDFRenderer.cpp to handle
+  the API change in recent Poppler versions.
 
 ## Testing
 
@@ -44,3 +36,8 @@ make install
 ```
 
 Tested on FreeBSD 15.0-CURRENT amd64 with Qt6.
+
+## Acknowledgments
+
+Thanks to the FreeBSD committer who reviewed and refactored the initial
+submission, providing a much cleaner port structure.
